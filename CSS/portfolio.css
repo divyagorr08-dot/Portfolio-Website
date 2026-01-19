@@ -1,0 +1,236 @@
+/* GLOBAL */
+* {
+    margin: 0; /* Removes default browser margin */
+    padding: 0; /* Removes default browser padding */
+    box-sizing: border-box; /* Includes padding and border in element width/height */
+    font-family: 'Poppins', sans-serif; /* Applies custom font to entire site */
+}
+
+body {
+    background-color: #f4f6f8; /* Sets light gray background color */
+    color: #333; /* Sets default text color */
+    line-height: 1.6; /* Improves text readability */
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex; /* Enables flexbox layout */
+    justify-content: space-between; /* Pushes logo left and links right */
+    align-items: center; /* Vertically centers navbar items */
+    background-color: #1f2933; /* Dark background for navbar */
+    padding: 15px 40px;  /* Adds spacing inside navbar */
+    position: fixed; /* Keeps navbar visible while scrolling */
+    width: 100%; /* Makes navbar span full width of page */
+}
+
+.logo {
+    color: #61dafb; /* Sets logo text color */
+    font-size: 24px; /* Sets logo font size */
+}
+
+.nav-links {
+    display: flex; /* Displays navigation links horizontally */
+    list-style: none; /* Removes bullet points */
+}
+
+.nav-links li {
+    margin-left: 25px; /* Adds space between navigation items */
+}
+
+.nav-links a {
+    color: white; /* Sets navigation link text color */
+    text-decoration: none; /* Removes underline from links */
+}
+
+.nav-links a:hover {
+    color: #61dafb; /* Changes link color when hovered */
+}
+
+/* HOME */
+
+.home {
+    position: relative; /* Allows child elements to be positioned absolutely */
+    height: 100vh; /* Sets height to full viewport */
+    overflow: hidden; /* Hides overflowing video content */
+    display: flex; /* Enables flexbox layout */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+    text-align: center; /* Centers text */
+}
+.home .home-video {
+    position: absolute; /* Removes video from normal document flow */
+    top: 50%; /* Centers video vertically */
+    left: 50%; /* Centers video horizontally */
+    min-width: 100%; /* Ensures video covers width */
+    min-height: 100%; /* Ensures video covers height */
+    transform: translate(-50%, -50%); /* Perfectly centers video */
+    object-fit: cover; /* Prevents video distortion */
+    z-index: -1; /* Places video behind content */
+}
+
+/* DARK OVERLAY */
+.home::before {
+   content: ""; /* Creates overlay layer */
+    position: absolute; /* Positions overlay inside home section */
+    inset: 0; /* Covers entire home section */
+    background: rgba(17, 24, 39, 0.65); /* Semi-transparent dark overlay */
+    z-index: 0; /* Places overlay above video */
+}
+
+/* HOME CONTENT */
+.home-content {
+    position: relative; /* Keeps content positioned above overlay */
+    z-index: 1; /* Ensures text and image appear on top */
+    color: white; /* Sets text color to white */
+}
+
+/* PROFILE IMAGE */
+.profile-img {
+    width: 180px; /* Sets image width */
+    height: 180px; /* Sets image height */
+    border-radius: 50%; /* Makes image circular */
+    object-fit: cover; /* Prevents image stretching */
+    margin-bottom: 20px; /* Adds space below image */
+    border: 4px solid #61dafb; /* Adds colored border around image */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Adds depth using shadow */
+}
+
+.profile-img:hover {
+    transform: scale(1.05); /* Slightly enlarges image on hover */
+    transition: transform 0.3s ease; /* Smooth hover animation */
+}
+
+.home h2 {
+    font-size: 40px; /* Sets heading font size */
+}
+
+/* BUTTON */
+.btn {
+     display: inline-block; /* Allows padding and transforms */
+    padding: 12px 30px; /* Controls button size */
+    background-color: #61dafb; /* Button background color */
+    color: #1f2933; /* Button text color */
+    text-decoration: none; /* Removes underline */
+    border-radius: 25px; /* Rounds button edges */
+    margin-top: 20px; /* Adds space above button */
+    border: none; /* Removes default border */
+    cursor: pointer; /* Changes cursor on hover */
+}
+
+.btn:hover {
+     transform: scale(1.05); /* Slightly enlarges button on hover */
+}
+
+/* SECTIONS */
+section {
+   padding: 70px 15%; /* Adds space around section content */
+    text-align: center; /* Centers text */
+}
+
+.projects {
+    background-color: #ffffff; /* Sets white background */
+}
+
+/* PROJECT CARD */
+.project-card {
+    background: #f4f6f8; /* Light background for card */
+    padding: 25px; /* Adds inner spacing */
+    margin: 20px auto; /* Centers card and adds vertical spacing */
+    max-width: 700px; /* Limits card width */
+    border-radius: 10px; /* Rounds card corners */
+}
+
+/* GITHUB */
+.github {
+    background-color: #1f2933; /* Dark background */
+    color: white; /* White text color */
+}
+
+.github h2 {
+    color: #61dafb; /* Highlight color for heading */
+}
+
+/* CONTACT FORM */
+.contact-form {
+     max-width: 500px; /* Limits form width */
+    margin: 0 auto; /* Centers form */
+    display: flex; /* Enables flexbox */
+    flex-direction: column; /* Stacks inputs vertically */
+}
+
+.contact-form input,
+.contact-form textarea {
+   padding: 12px; /* Adds inner spacing */
+    margin: 10px 0; /* Adds spacing between fields */
+    border-radius: 5px; /* Rounds input corners */
+    border: 1px solid #ccc; /* Light gray border */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none; /* Removes default outline */
+    border-color: #61dafb; /* Highlights input border on focus */
+}
+
+/* FOOTER */
+footer {
+   background-color: #1f2933; /* Dark footer background */
+    color: white; /* White text */
+    text-align: center; /* Centers footer content */
+    padding: 15px; /* Adds spacing inside footer */
+}
+
+/* ========================= */
+/* 📱 MEDIA QUERIES */
+/* ========================= */
+
+/* Tablets */
+@media (max-width: 900px) {
+    section {
+        padding: 60px 8%; /* Reduces padding for tablets */
+    }
+
+    .home h2 {
+        font-size: 32px; /* Reduces heading size */
+    }
+}
+
+/* Mobile */
+
+
+
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column; /* Stacks navbar items vertically */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stacks navigation links */
+        margin-top: 10px; /* Adds spacing above links */
+    } 
+
+    .nav-links li {
+        margin: 10px 0; /* Adds vertical spacing between links */
+    }
+
+    .home {
+        height: auto; /* Allows home section to expand naturally */
+        padding: 60px 20px; /* Adds padding on small screens */
+    } 
+
+    .home h2 {
+        font-size: 26px; /* Smaller heading for mobile */
+    }
+
+    section {
+        padding: 50px 20px; /* Reduces section padding */
+    }
+     .profile-img {
+        width: 130px; /* Smaller image on mobile */
+        height: 130px; /* Maintains aspect ratio */
+    }
+}
+
+
+
