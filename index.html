@@ -18,6 +18,7 @@
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#tech">Tech Stack</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#github">GitHub</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -40,7 +41,8 @@
 
             <h2>Hello, I'm Divya</h2>
             <p>
-                My name is NagaDivya. Welcome to my portfolio website. On it, I will tell you about my background and experience.
+                Hi, I'm Nagadivya, a Software Developer focused on building clean, accessible, and high-performance web applications. I specialize in HTML, CSS, JS. Here you'll find a curated selection of my projects.
+                
             </p>
             <br> Thank you for stopping by and enjoy! 
             <br>
@@ -50,10 +52,82 @@
 
     <!-- ABOUT -->
     <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>
-           I am a software developer who loves to code! I enjoy time with my family and traveling. 
+        <h2 class="about-me">About Me</h2>
+        <p class="about-description">
+           I am a passionate and driven aspiring software developer with a strong foundation in core web technologies. I am actively honing my skills across the modern web development stack, including HTML, CSS, JavaScript, Bootstrap, React, and jQuery. 
         </p>
+
+        
+    </section>
+    <section id ="tech" class="tech">
+    <!-- Slideshow Gallery -->
+    <!-- Container for the image gallery -->
+<h3 class="tech-title">Tech Stack</h3>
+<div class="container">
+    
+
+  <!-- Full-width images with number text -->
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+      <img src="./Images/Technology/html.png" style="width:30%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+      <img src="./Images/Technology/css-copy.jpg" style="width:30%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+      <img src="./Images/Technology/javascript.png" style="width:30%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+      <img src="./Images/Technology/bootstrap-copy.png" style="width:30%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+      <img src="./Images/Technology/react-copy.png" style="width:30%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+      <img src="./Images/Technology/jquery-copy.gif" style="width:30%">
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <!-- Image text -->
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <!-- Thumbnail images -->
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="./Images/Technology/html.png" style="width:100%" onclick="currentSlide(1)" alt="HTML - HyperText Markup Language - to create and structure web pages and applications">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./Images/Technology/css-copy.jpg" style="width:100%" onclick="currentSlide(2)" alt="CSS - Cascading Style Sheets - to style and design web pages and applications">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./Images/Technology/javascript.png" style="width:100%" onclick="currentSlide(3)" alt="JavaScript - to add interactivity and dynamic behavior to web pages and applications">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./Images/Technology/bootstrap-copy.png" style="width:100%" onclick="currentSlide(4)" alt="Bootstrap - a popular front-end framework for building responsive and mobile-first websites and applications">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./Images/Technology/react-copy.png" style="width:100%" onclick="currentSlide(5)" alt="React - a JavaScript library for building user interfaces">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./Images/Technology/jquery-copy.gif" style="width:100%" onclick="currentSlide(6)" alt="jQuery - a fast, small, and feature-rich JavaScript library that simplifies HTML document traversal and manipulation, event handling, and animation">
+    </div>
+  </div>
+</div>
     </section>
 
     <!-- PROJECTS -->
@@ -62,16 +136,27 @@
 
         <div class="project-card">
             <h3>HTML and CSS Projects</h3>
+
             <p>
                 Here we have sample websites that I made using HTML and CSS
             </p>
+            <ul>
+                <li>Space Station Site</li>
+                <li>Movie Theatre Site</li>
+            </ul>
         </div>
 
         <div class="project-card">
             <h3>Javascript</h3>
             <p>
-                Coming Soon.....
+                Here we have sample websites that I made using JavaScript
             </p>
+
+            <ul>
+                <li>Pizza Menu</li>
+                <li>Tic Tac Toe</li>
+                <li>Calculator</li>
+            </ul>
         </div>
     </section>
 
@@ -87,19 +172,28 @@
     <!-- CONTACT FORM -->
     <section id="contact" class="contact">
         <h2>Contact Me</h2>
+        <button class="open-button" onclick="openForm()">Open Form</button>
+<div class="form-popup" id="myForm">
 
-        <form class="contact-form" action="https://formspree.io/f/mnjjjyjn" method="POST">
-            <input type="text" placeholder="Please enter your name here" required>
-            <input type="email" placeholder="Please enter your email here" required>
-            <textarea rows="5" placeholder="Please write your message here" required></textarea>
+
+<form class="contact-form" action="https://formspree.io/f/mnjjjyjn" method="POST">
+    <h1>Contact Form</h1>
+            <input type="text" placeholder="Please enter your name here" name="text" required>
+            <input type="email" placeholder="Please enter your email here" name="email" required>
+            <textarea rows="5" placeholder="Please write your message here" name="message" required></textarea>
             <button type="submit" class="btn">Send Message</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
+
+
+</div>
+        
     </section>
 
     <!-- FOOTER -->
     <footer>
         <p>&copy;2026 Nagadivya | Portfolio Website</p>
     </footer>
-
+<script src="./JS/main.js"></script>
 </body>
 </html>

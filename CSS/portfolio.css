@@ -86,7 +86,7 @@ body {
 /* HOME CONTENT */
 .home-content {
     position: relative; /* Keeps content positioned above overlay */
-    z-index: 1; /* Ensures text and image appear on top */
+    z-index: 0; /* Ensures content is above overlay */
     color: white; /* Sets text color to white */
 }
 
@@ -132,20 +132,175 @@ section {
    padding: 70px 15%; /* Adds space around section content */
     text-align: center; /* Centers text */
 }
-
-.projects {
+.about{
     background-color: #ffffff; /* Sets white background */
 }
 
-/* PROJECT CARD */
-.project-card {
-    background: #f4f6f8; /* Light background for card */
-    padding: 25px; /* Adds inner spacing */
-    margin: 20px auto; /* Centers card and adds vertical spacing */
-    max-width: 700px; /* Limits card width */
-    border-radius: 10px; /* Rounds card corners */
+.about-me{
+    font-size: 28px; /* Sets heading font size */
+}
+.tech-title {
+    
+    font-size: 28px; /* Sets heading font size */
+    color: #1f2933; /* Sets heading color */
+    margin-bottom: 40px; /* Adds space below heading */
+    /* text-decoration: underline; */
 }
 
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative; 
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none; 
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer; 
+}
+.prev {
+  left: 20px; /* Position the previous button slightly from the left */
+  border-radius: 3px 0 0 3px; /* Rounded corners on the left side */
+}
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer; /* Show hand cursor on hover */
+  position: absolute; /* Position relative to container */
+  top: 40%; /* Vertically center arrows */
+  width: auto; /* Width adjusts to content */
+  padding: 16px; /* Space around arrow icon */
+  margin-top: -50px; /* Adjust vertical alignment */
+  /* color: white; */
+  font-weight: bold; /* Bold arrow text */
+  font-size: 20px; /* Arrow size */
+  border-radius: 0 3px 3px 0; /* Rounded corners on one side */
+  /* user-select: none;
+  -webkit-user-select: none; */
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0; /* Position the next button on the right side */
+  border-radius: 3px 0 0 3px; /* Rounded corners on the left */
+}
+
+/* On hover, add a black background color with a little bit see-through */
+/* .prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+} */
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;  /* Light gray text */
+  font-size: 12px; /* Small font size */
+  padding: 8px 12px; /* Space around text */
+  position: absolute; /* Positioned inside slide */
+  top: 0; /* Place at top of slide */
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center; /* Center caption text */
+  background-color: #222; /* Dark background */
+  padding: 2px 16px; /* Inner spacing */
+  color: white;  /* White text */
+}
+
+.row:after {
+  content: ""; /* Required for clearfix */
+  display: table; /* Create block formatting context */
+  clear: both;  /* Clear floated columns */
+}
+
+/* Six columns side by side */
+.column {
+  float: left;  /* Align thumbnails horizontally */
+  width: 16.66%; /* 6 columns across */
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1; /* Highlight active or hovered thumbnail */ /* Fully visible */
+}
+
+
+/* PROJECT CARD */
+
+.projects {
+    background-color: #ffffff; /* White background for contrast */
+    padding: 80px 15%; /* Space around the section */
+    text-align: center; /* Center-align text */
+}
+
+.projects h2 {
+    font-size: 36px; /* Large section heading */
+    margin-bottom: 40px;/* Space below heading */
+    color: #1f2933; /* Dark heading color */
+}
+.project-card {
+    background: #f4f6f8; /* Light background for card */
+    padding: 30px; /* Adds inner spacing */
+    margin: 25px auto; /* Centers card and adds vertical spacing */
+    max-width: 700px; /* Limits card width */
+    border-radius: 15px; /* Rounds card corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);/* Soft shadow */
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;/* Smooth hover effect */
+}
+/* Card hover effect */
+.project-card:hover {
+    transform: translateY(-8px);/* Lift card on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Project title */
+.project-card h3 {
+    font-size: 24px;
+    color: #61dafb;/* Accent color */
+    margin-bottom: 15px;
+}
+
+/* Project description */
+.project-card p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Project list styling */
+
+.project-card ul {
+    list-style: none;/* Remove bullets */
+    padding: 0;
+}
+
+.project-card ul li {
+    background-color: #ffffff;/* White list items */
+    margin: 8px 0; /* Space between items */
+    padding: 10px 15px; /* Inner spacing */
+    border-radius: 8px; /* Rounded edges */
+    font-weight: 500;
+    color: #1f2933;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+/* Hover effect for list items */
+.project-card ul li:hover {
+    background-color: #61dafb; /* Accent hover */
+    color: #1f2933;
+    transform: scale(1.03);/* Slight zoom */
+}
 /* GITHUB */
 .github {
     background-color: #1f2933; /* Dark background */
@@ -153,15 +308,42 @@ section {
 }
 
 .github h2 {
-    color: #61dafb; /* Highlight color for heading */
+    margin-bottom: 20px; /* Space below heading */
 }
 
 /* CONTACT FORM */
+
+.contact h2{
+    margin-bottom: 20px; /* Adds spacing below the Contact section heading */
+}
+
+.open-button {
+  background-color: #555; /* Dark gray background */
+  color: white; /* White text */
+  padding: 16px 20px; /* Inner spacing */
+  border: none; /* Removes default border */
+  cursor: pointer; /* Hand cursor on hover */
+  opacity: 0.8; /* Slight transparency */
+  position: relative; /* Allows positioning */
+  right: 6px; /* Moves button slightly left */
+  top: 30px; /* Moves button downward */
+  width: 280px; /* Fixed button width */
+  border-radius: 40px; /* Fully rounded edges */
+  font-size: 15px; /* Button text size */
+}
+
+.form-popup {
+  display: none;   /* Hidden by default */
+  position: fixed;  /* Fixed to viewport */
+  bottom: 0;  /* Sticks to bottom */
+  right: 15px;  /* Positioned from right */
+  border: 3px solid #f1f1f1;/* Light gray border */
+  z-index: 9; /* Ensures it appears on top */
+}
 .contact-form {
      max-width: 500px; /* Limits form width */
-    margin: 0 auto; /* Centers form */
-    display: flex; /* Enables flexbox */
-    flex-direction: column; /* Stacks inputs vertically */
+    padding: 10px; /* Inner spacing */
+  background-color: white; /* White background */
 }
 
 .contact-form input,
@@ -170,6 +352,7 @@ section {
     margin: 10px 0; /* Adds spacing between fields */
     border-radius: 5px; /* Rounds input corners */
     border: 1px solid #ccc; /* Light gray border */
+    width: 100%; /* Makes inputs full width */
 }
 
 .contact-form input:focus,
@@ -178,6 +361,27 @@ section {
     border-color: #61dafb; /* Highlights input border on focus */
 }
 
+/* Set a style for the submit/login button */
+.contact-form .btn {
+  background-color: #04AA6D;  /* Green background */
+  color: white; /* White text */
+  padding: 16px 20px; /* Inner spacing */
+  border: none;/* Removes border */
+  cursor: pointer; /* Hand cursor */
+  width: 100%; /* Full width button */
+  margin-bottom: 10px; /* Space below button */
+  opacity: 0.8;/* Slight transparency */
+}
+
+/* Add a red background color to the cancel button */
+.contact-form .cancel {
+  background-color: red; /* Red background */
+}
+
+/* Add some hover effects to buttons */
+.contact-form .btn:hover, .open-button:hover {
+  opacity: 1; /* Increase opacity on hover for better feedback */
+}
 /* FOOTER */
 footer {
    background-color: #1f2933; /* Dark footer background */
@@ -186,9 +390,7 @@ footer {
     padding: 15px; /* Adds spacing inside footer */
 }
 
-/* ========================= */
-/* 📱 MEDIA QUERIES */
-/* ========================= */
+/* Media Queries */
 
 /* Tablets */
 @media (max-width: 900px) {
